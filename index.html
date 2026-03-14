@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Bhagavad Gita Classes | Divine Wisdom</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Lightbox for gallery -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --saffron: #FF9933;
+            --gold: #D4AF37;
+            --maroon: #800000;
+            --cream: #FFFDD0;
+            --deep-gold: #B8860B;
+            --saffron-light: #FFB366;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: #333;
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        h1, h2, h3, .navbar-brand {
+            font-family: 'Cinzel', serif;
+            color: var(--maroon);
+        }
+
+        /* Mobile First Approach */
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        /* Navbar - Mobile Optimized */
+        .navbar {
+            background: rgba(255, 253, 208, 0.98);
+            border-bottom: 2px solid var(--gold);
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar-brand {
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand i {
+            font-size: 1.3rem;
+        }
+        
+        .navbar-toggler {
+            border: 2px solid var(--gold);
+            padding: 0.4rem 0.6rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.2rem rgba(255,153,51,0.3);
+        }
+        
+        .nav-link {
+            color: var(--maroon) !important;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.7rem 1rem !important;
+            text-align: center;
+            border-bottom: 1px solid rgba(212,175,55,0.2);
+        }
+        
+        .nav-link:last-child {
+            border-bottom: none;
+        }
+        
+        @media (min-width: 992px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .nav-link {
+                border-bottom: none;
+                padding: 0.5rem 1rem !important;
+            }
+        }
+
+        /* Hero Section - Mobile Optimized */
+        .hero {
+            min-height: 100vh;
+            height: auto;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1590050752117-23a9d7f26a83?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-size: 2rem;
+            color: var(--gold);
+            text-shadow: 0 0 15px rgba(212,175,55,0.5);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .hero .lead {
+            font-size: 1rem;
+            padding: 0 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero .lead {
+                font-size: 1.25rem;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, var(--saffron), var(--saffron-light));
+            color: white;
+            border: 2px solid var(--gold);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.4s;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(255,153,51,0.4);
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 250px;
+            margin: 5px auto;
+        }
+        
+        @media (min-width: 768px) {
+            .btn-premium {
+                padding: 12px 30px;
+                font-size: 1rem;
+                width: auto;
+            }
+        }
+
+        /* Section styling */
+        section { 
+            padding: 50px 0; 
+        }
+        
+        @media (min-width: 768px) {
+            section { 
+                padding: 80px 0; 
+            }
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: 'ॐ';
+            display: block;
+            font-size: 1.8rem;
+            color: var(--saffron);
+            margin-top: 5px;
+        }
+        
+        @media (min-width: 768px) {
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            .section-title::after {
+                font-size: 2rem;
+            }
+        }
+
+        /* Sloka Card - Mobile Optimized */
+        .sloka-card-modern {
+            background: white;
+            border-radius: 20px;
+            padding: 1.2rem 1rem;
+            border: 1px solid rgba(212,175,55,0.3);
+            box-shadow: 0 15px 30px -10px rgba(128,0,0,0.15);
+            transition: 0.25s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .sloka-card-modern {
+                padding: 1.8rem 1.5rem;
+                margin-bottom: 0;
+            }
+        }
+        
+        .sanskrit-devanagari {
+            font-size: 1.2rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: var(--maroon);
+            font-family: 'Cinzel', serif;
+            background: #fef7e9;
+            padding: 0.8rem 0.5rem;
+            border-radius: 16px;
+            margin-bottom: 0.8rem;
+            border-left: 4px solid var(--saffron);
+        }
+        
+        @media (min-width: 768px) {
+            .sanskrit-devanagari {
+                font-size: 1.5rem;
+                padding: 1rem 0.5rem;
+            }
+        }
+        
+        .sloka-meta {
+            font-size: 0.8rem;
+            color: #5a4e3e;
+            margin-bottom: 0.7rem;
+        }
+        
+        .sloka-meaning {
+            font-size: 0.85rem;
+            background: #faf3e0;
+            padding: 0.6rem 0.8rem;
+            border-radius: 14px;
+            margin: 0.8rem 0 1rem 0;
+            border-left: 3px solid var(--deep-gold);
+            flex-grow: 1;
+        }
+        
+        @media (min-width: 768px) {
+            .sloka-meaning {
+                font-size: 0.95rem;
+                padding: 0.7rem 1rem;
+            }
+        }
+
+        /* Video Player - Mobile Optimized */
+        .video-player-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: auto;
+            position: relative;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .video-thumb-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .video-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--saffron), var(--saffron-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,153,51,0.5);
+            border: 2px solid var(--gold);
+        }
+        
+        @media (min-width: 768px) {
+            .video-play-btn {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+            }
+        }
+        
+        .video-frame-wrapper {
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
+        
+        .video-frame-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 14px;
+        }
+
+        /* Shorts Player - Mobile Optimized */
+        .shorts-player-container {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: 2px solid var(--gold);
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 25px -8px rgba(128,0,0,0.3);
+            margin-bottom: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .shorts-player-container {
+                margin-bottom: 0;
+            }
+        }
+        
+        .shorts-thumb-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .shorts-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .shorts-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--saffron), var(--saffron-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,153,51,0.5);
+            border: 2px solid var(--gold);
+        }
+        
+        @media (min-width: 768px) {
+            .shorts-play-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+        
+        .shorts-frame-wrapper {
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+        }
+        
+        .shorts-frame-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 18px;
+        }
+
+        /* Class Cards - Mobile Optimized */
+        .class-card {
+            background: linear-gradient(135deg, #fff 0%, #fff9f0 100%);
+            border: 1px solid var(--gold);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.3s;
+            cursor: pointer;
+            height: 100%;
+            padding: 1.5rem 1rem !important;
+            margin-bottom: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .class-card {
+                padding: 2rem !important;
+                margin-bottom: 0;
+            }
+        }
+
+        /* Gallery - Mobile Optimized */
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            margin-bottom: 15px;
+            border: 2px solid transparent;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        
+        @media (min-width: 576px) {
+            .gallery-item img {
+                height: 200px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .gallery-item img {
+                height: 220px;
+            }
+        }
+
+        /* WhatsApp Float - Mobile Optimized */
+        .whatsapp-float {
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px;
+            background: linear-gradient(135deg, #25d366, #128C7E);
+            color: white;
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%;
+            text-align: center; 
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.4); 
+            z-index: 1000;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+        }
+        
+        @media (min-width: 768px) {
+            .whatsapp-float {
+                bottom: 40px; 
+                right: 40px;
+                width: 60px; 
+                height: 60px; 
+                font-size: 30px;
+            }
+        }
+
+        /* Scroll to top - Mobile Optimized */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background: var(--maroon);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+            z-index: 999;
+            font-size: 18px;
+        }
+        
+        @media (min-width: 768px) {
+            .scroll-top {
+                bottom: 40px;
+                left: 40px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+        
+        .scroll-top.show {
+            opacity: 1;
+        }
+
+        /* Footer - Mobile Optimized */
+        footer {
+            background: var(--maroon);
+            color: var(--cream);
+            padding: 40px 0 20px;
+            border-top: 5px solid var(--gold);
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            footer {
+                text-align: left;
+            }
+        }
+        
+        .footer-logo { 
+            font-family: 'Cinzel', serif; 
+            font-size: 1.3rem; 
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Form - Mobile Optimized */
+        .form-control, .form-select { 
+            border: 1px solid var(--gold); 
+            padding: 0.7rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+        }
+        
+        @media (min-width: 768px) {
+            .form-control, .form-select { 
+                padding: 0.75rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Row gutters for mobile */
+        .row {
+            margin-right: -10px;
+            margin-left: -10px;
+        }
+        
+        .col-md-4, .col-md-6, .col-sm-6 {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#"><i class="fas fa-book-open me-2" style="color: var(--saffron);"></i>GEETHA PATASHALA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#slokas">Slokas for Kids</a></li>
+                <li class="nav-item"><a class="nav-link" href="#classes">Classes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero" style="background-image: url('image3.jpeg'); background-repeat: no-repeat; background-size: cover;">
+    <div class="container" data-aos="fade-up">
+        <h1 class="glow-effect" style="color: white;">Discover the Wisdom of Bhagavad Gita</h1>
+        <p class="lead mb-4">Transform your life with the eternal teachings of Lord Krishna. Simple, profound, and practical guidance for children and adults.</p>
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-sm-3 mt-4">
+            <a href="#classes" class="btn btn-premium">Join Online Class</a>
+            <a href="#slokas" class="btn btn-premium" style="background:transparent; border-color:white;">Explore Slokas</a>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+                <img src="https://www.bhaktvatsal.com/_next/image?url=https%3A%2F%2Fbhaktvatsal-s3.s3.ap-south-1.amazonaws.com%2Fuploads%2Fb846ddab3769c8e5a71d629c4b11c702.webp&w=3840&q=75" alt="Gita Teachings" class="img-fluid rounded-4 shadow-lg">
+            </div>
+            <div class="col-md-6 ps-md-5" data-aos="fade-left">
+                <h2 class="section-title text-start">Eternal Teachings</h2>
+                <p>The Bhagavad Gita is not just a religious text but a manual for living. Our classes break down complex Sanskrit verses into simple, actionable life lessons.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-dharmachakra me-2 text-warning"></i> Mind Control & Meditation</li>
+                    <li class="mb-2"><i class="fas fa-dharmachakra me-2 text-warning"></i> Art of Right Action (Karma Yoga)</li>
+                    <li class="mb-2"><i class="fas fa-dharmachakra me-2 text-warning"></i> Developing Inner Peace</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Smart Video Section - Auto Thumbnail from Link -->
+<section id="slokas" style="background:#fdf5e6; padding:50px 0;">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+            <span>Slokas for Kids</span>
+        </h2>
+        <div class="row g-4" id="slokasContainer">
+            <!-- Videos will be dynamically loaded here -->
+        </div>
+    </div>
+</section>
+
+<!-- Smart Shorts Section - Auto Thumbnail from Link -->
+<section id="shorts" style="padding:50px 0; background:#fff8e1;">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+            <span>Bhagavad Gita Shorts</span>
+        </h2>
+        <div class="row g-4 justify-content-center" id="shortsContainer">
+            <!-- Shorts will be dynamically loaded here -->
+        </div>
+        <p class="text-center mt-4 small text-muted">✨ Click on any card to play video — videos play inline</p>
+    </div>
+</section>
+
+<!-- Classes -->
+<section id="classes">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Our Classes</h2>
+        <div class="row g-4">
+            <div class="col-md-6" data-aos="fade-right">
+                <div class="class-card p-4 text-center" onclick="window.location.href='#contact';setClassType('Online')">
+                    <i class="fas fa-laptop-code fa-3x mb-3 text-warning"></i>
+                    <h3>Online Classes</h3>
+                    <p>Interactive Zoom sessions available globally. Perfect for busy schedules.</p>
+                    <p class="fw-bold">Sat-Sun (6:00 PM IST)</p>
+                    <span class="btn btn-premium">Register Online</span>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="class-card p-4 text-center" onclick="window.location.href='#contact';setClassType('Offline')">
+                    <i class="fas fa-temple fa-3x mb-3 text-warning"></i>
+                    <h3>Offline Classes</h3>
+                    <p>Traditional classroom at our spiritual center. Group chanting included.</p>
+                    <p class="fw-bold">Main Temple Hall</p>
+                    <span class="btn btn-premium">Visit Center</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" style="background:#fdf5e6;">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Moments from Our Ashram</h2>
+        <div class="row g-3">
+            <div class="col-6 col-md-4"><a href="image1.jpeg" data-lightbox="gita-gallery"><div class="gallery-item">
+                <img src="image1.jpeg" alt="Chanting" loading="lazy"></div></a></div>
+            <div class="col-6 col-md-4"><a href="image2.jpeg" data-lightbox="gita-gallery"><div class="gallery-item">
+                <img src="image2.jpeg" alt="Krishna Murti" loading="lazy"></div></a></div>
+            <div class="col-6 col-md-4"><a href="image3.jpeg" data-lightbox="gita-gallery"><div class="gallery-item">
+                <img src="image3.jpeg" alt="Kids" loading="lazy"></div></a></div>
+            <div class="col-6 col-md-4"><a href="https://dharmicverses.com/wp-content/uploads/2020/09/bhagawad-gita-on-table.jpg" data-lightbox="gita-gallery"><div class="gallery-item">
+                <img src="https://dharmicverses.com/wp-content/uploads/2020/09/bhagawad-gita-on-table.jpg" alt="Discourse" loading="lazy"></div></a></div>
+            <div class="col-6 col-md-4"><a href="https://www.mypoojabox.in/cdn/shop/products/bhagavad-gita-gift-box-pooja-191_1946x.jpg?v=1625062717" data-lightbox="gita-gallery"><div class="gallery-item">
+                <img src="https://www.mypoojabox.in/cdn/shop/products/bhagavad-gita-gift-box-pooja-191_1946x.jpg?v=1625062717" alt="Puja" loading="lazy"></div></a></div>
+            <div class="col-6 col-md-4"><a href="https://www.organicgyaan.com/cdn/shop/files/1_4_941c71b8-76fe-484b-9e21-b52341d626a6.jpg?v=1721466986&width=1000" data-lightbox="gita-gallery"><div class="gallery-item">
+                <img src="https://www.organicgyaan.com/cdn/shop/files/1_4_941c71b8-76fe-484b-9e21-b52341d626a6.jpg?v=1721466986&width=1000" alt="Meditation" loading="lazy"></div></a></div>
+        </div>
+        <div class="text-center mt-4"><p class="fst-italic">"Where Krishna is, there is victory." <br> <span class="text-muted">– Bhagavad Gita 18.78</span></p></div>
+    </div>
+</section>
+
+<!-- Contact -->
+<!-- Contact Section with Map, Phone and Email -->
+<section id="contact" style="background:#fff9f0; padding:60px 0;">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
+        <div class="row g-4">
+            <!-- Contact Information Column -->
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="card border-0 shadow-lg p-4 h-100 rounded-4" style="background: linear-gradient(135deg, var(--maroon), #990000); color: white;">
+                    <h3 class="mb-4" style="color: var(--gold);">Contact Information</h3>
+                    
+                    <!-- Address with Map Link -->
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <i class="fas fa-map-marker-alt fa-2x" style="color: var(--gold);"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold" style="color: var(--gold);">Our Ashram</h5>
+                            <p class="mb-2">GEETHA PATASHALA<br>
+                            Sai Chandra Residency, Kondapur, Raghavendra Colony, <br>
+                            Gachibowli, Hyderabad, Telangana 500084<br></p>
+                            <a href="https://maps.app.goo.gl/gxJchfukpYEbMCJX8" target="_blank" class="btn btn-sm" style="background: var(--saffron); color: white; border-radius: 25px; padding: 5px 15px;">
+                                <i class="fas fa-directions me-1"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Phone Numbers -->
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <i class="fas fa-phone-alt fa-2x" style="color: var(--gold);"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold" style="color: var(--gold);">Call Us</h5>
+                            <p class="mb-1">
+                                <i class="fab fa-whatsapp me-2" style="color: #25d366;"></i>
+                                <a href="https://wa.me/+916302789527" class="text-white text-decoration-none">+91 63027 89527</a> (WhatsApp)
+                            </p>
+                            <p class="mb-1">
+                                <i class="fas fa-phone me-2"></i>
+                                <a href="tel:+916302789527" class="text-white text-decoration-none">+91 63027 89527</a> (Mobile)
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <i class="fas fa-envelope fa-2x" style="color: var(--gold);"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold" style="color: var(--gold);">Email Us</h5>
+                            <p class="mb-1">
+                                <i class="fas fa-inbox me-2"></i>
+                                <a href="mailto:info@gitavidya.org" class="text-white text-decoration-none">info@gitavidya.org</a> (General)
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="mt-4">
+                        <h5 class="fw-bold mb-3" style="color: var(--gold);">Follow Us</h5>
+                        <div class="d-flex gap-3">
+                            <a href="https://www.instagram.com/kanwal_sanatana?igsh=bnQ4aW51dnRwbWw2" class="btn btn-outline-light rounded-circle" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/kanwal_sanatana?igsh=bnQ4aW51dnRwbWw2" class="btn btn-outline-light rounded-circle" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@kanwal_sanatana" class="btn btn-outline-light rounded-circle" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-light rounded-circle" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Booking Form Column -->
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="card border-0 shadow-lg p-3 p-md-5 rounded-4 h-100">
+                    <h2 class="text-center mb-4">Book Your Seat <span class="booking-badge ms-2">ॐ</span></h2>
+                    
+                    <!-- Alert for form submission -->
+                    <div id="liveAlert" class="alert d-none align-items-center" role="alert">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle me-3 fs-3"></i>
+                            <span id="alertMessage" class="flex-grow-1"></span>
+                            <button type="button" class="btn-close btn-close-custom" onclick="this.parentElement.parentElement.parentElement.classList.add('d-none')" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    
+                    <form id="bookingForm">
+                        <input type="hidden" name="classType" id="classTypeInput" value="Online">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Full Name *</label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Mobile Number *</label>
+                                <input type="tel" class="form-control" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Place / City</label>
+                                <input type="text" class="form-control" name="place" placeholder="e.g., Mumbai, Delhi">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Class Mode *</label>
+                                <select class="form-select" name="classMode" id="classModeSelect" required>
+                                    <option value="Online">Online (Zoom)</option>
+                                    <option value="Offline">Offline (Ashram)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Preferred Slot *</label>
+                                <select class="form-select" name="slot" required>
+                                    <option value="">-- Select a slot --</option>
+                                    <option value="Weekdays Morning (8-9 AM)">Weekdays Morning (8-9 AM)</option>
+                                    <option value="Weekdays Evening (6-7 PM)">Weekdays Evening (6-7 PM)</option>
+                                    <option value="Saturday Batch (10 AM-12 PM)">Saturday Batch (10 AM-12 PM)</option>
+                                    <option value="Sunday Batch (4-6 PM)">Sunday Batch (4-6 PM)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Email (optional)</label>
+                                <input type="email" class="form-control" name="email" placeholder="email@example.com">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Additional message / Questions</label>
+                                <textarea class="form-control" name="message" rows="3" placeholder="Any specific requirements or questions..."></textarea>
+                            </div>
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-premium w-100" id="submitBtn">
+                                    <i class="fas fa-paper-plane me-2"></i>Submit Booking
+                                </button>
+                            </div>
+                        </div>
+                        <p class="small text-muted mt-3 mb-0 text-center">
+                            <i class="fas fa-om me-1" style="color: var(--saffron);"></i> 
+                            We'll confirm your slot via WhatsApp/SMS within 2 hours
+                        </p>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Map Location (Full Width Below) -->
+            <div class="col-12 mt-4" data-aos="fade-up">
+                <div class="card border-0 shadow-lg p-3 rounded-4">
+                    <h4 class="mb-3" style="color: var(--maroon);">
+                        <i class="fas fa-map-marked-alt me-2" style="color: var(--saffron);"></i>
+                        Our Location
+                    </h4>
+
+                    
+                    <div class="ratio ratio-21x9">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.8979848693593!2d78.35815887369152!3d17.472501400350506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb924a1ad768cf%3A0xbd9472fff8160aeb!2sSai%20Chandra%20Residency%2C%20Kondapur%2C%20Raghavendra%20Colony%2C%20Gachibowli%2C%20Hyderabad%2C%20Telangana%20500084!5e1!3m2!1sen!2sin!4v1773519550942!5m2!1sen!2sin" 
+                            style="border:0; border-radius: 12px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="GEETHA PATASHALA">
+                        </iframe>
+                    </div>
+                    <div class="row mt-3 text-center">
+                        <div class="col-md-4">
+                            <i class="fas fa-car me-2" style="color: var(--saffron);"></i>
+                            <span>Parking Available</span>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fas fa-wheelchair me-2" style="color: var(--saffron);"></i>
+                            <span>Wheelchair Accessible</span>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fas fa-wifi me-2" style="color: var(--saffron);"></i>
+                            <span>Free WiFi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add this CSS to your existing styles -->
+<style>
+    /* Contact Section Enhancements */
+    .contact-info-card {
+        background: linear-gradient(135deg, var(--maroon), #990000);
+        color: white;
+        transition: transform 0.3s ease;
+    }
+    
+    .contact-info-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .contact-info-card a:hover {
+        color: var(--gold) !important;
+        text-decoration: underline !important;
+    }
+    
+    .social-btn {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid white;
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .social-btn:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--maroon) !important;
+        transform: translateY(-3px);
+    }
+    
+    /* Map responsive adjustments */
+    @media (max-width: 768px) {
+        .ratio-21x9 {
+            --bs-aspect-ratio: 50%;
+        }
+        
+        .contact-info-card {
+            margin-bottom: 20px;
+        }
+        
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+        }
+    }
+    
+    /* Custom styling for contact information */
+    .contact-detail-item {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 15px;
+    }
+    
+    .contact-detail-item:last-child {
+        border-bottom: none;
+    }
+    
+    .booking-badge {
+        background: linear-gradient(135deg, var(--saffron), var(--saffron-light));
+        color: var(--maroon);
+        padding: 0.3rem 0.8rem;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    
+    /* Form styling */
+    #bookingForm .form-control:focus,
+    #bookingForm .form-select:focus {
+        border-color: var(--saffron);
+        box-shadow: 0 0 0 0.2rem rgba(255,153,51,0.25);
+    }
+    
+    /* Alert styling */
+    .alert-success-custom {
+        background: linear-gradient(145deg, #d4edda, #c3e6cb);
+        border-left: 6px solid #28a745;
+        color: #155724;
+        border-radius: 12px;
+    }
+    
+    .alert-danger {
+        border-left: 6px solid #dc3545;
+    }
+</style>
+
+<!-- Add this JavaScript for the booking form -->
+<script>
+    // Booking form submission handler
+    document.getElementById('bookingForm')?.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse me-2"></i>Booking...';
+        submitBtn.disabled = true;
+
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const phone = formData.get('phone');
+        const slot = formData.get('slot');
+        
+        // Validation
+        if (!name || !phone || !slot) {
+            showAlert('Please fill all required fields (Name, Phone, and Slot)', 'danger');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            return;
+        }
+        
+        if (!/^\d{10}$/.test(phone)) {
+            showAlert('Please enter a valid 10-digit mobile number', 'danger');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            return;
+        }
+
+        // Simulate form submission (replace with actual API call)
+        setTimeout(() => {
+            // Success message
+            showAlert('✅ Thank you for booking! We will contact you within 2 hours.', 'success');
+            
+            // Reset form
+            e.target.reset();
+            document.getElementById('classTypeInput').value = 'Online';
+            document.getElementById('classModeSelect').value = 'Online';
+            
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }, 1500);
+    });
+
+    function showAlert(message, type) {
+        const alertDiv = document.getElementById('liveAlert');
+        const alertMsg = document.getElementById('alertMessage');
+        alertMsg.innerText = message;
+        
+        alertDiv.classList.remove('d-none', 'alert-success-custom', 'alert-danger');
+        
+        if (type === 'success') {
+            alertDiv.classList.add('alert-success-custom');
+        } else {
+            alertDiv.classList.add('alert-danger');
+        }
+        
+        alertDiv.classList.remove('d-none');
+        
+        // Auto hide after 5 seconds
+        setTimeout(() => alertDiv.classList.add('d-none'), 5000);
+    }
+
+    // Update hidden classType when dropdown changes
+    document.getElementById('classModeSelect')?.addEventListener('change', function(e) {
+        document.getElementById('classTypeInput').value = e.target.value;
+    });
+
+    function setClassType(type) {
+        document.getElementById('classTypeInput').value = type;
+        const select = document.getElementById('classModeSelect');
+        if (select) select.value = type;
+    }
+</script>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="footer-logo mb-3">GEETHA PATASHALA</div>
+                <p>Spreading the divine light of Bhagavad Gita to every corner of the world. Join us in this journey of self-discovery.</p>
+            </div>
+            <div class="col-md-4 mb-4 text-center">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                    <li class="mb-2"><a href="#slokas" class="text-white text-decoration-none">Slokas for Kids</a></li>
+                    <li class="mb-2"><a href="#classes" class="text-white text-decoration-none">Classes</a></li>
+                    <li class="mb-2"><a href="#gallery" class="text-white text-decoration-none">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-4 text-center text-md-end">
+                <h5>Follow Us</h5>
+                <div class="fs-4">
+                    <a href="https://www.instagram.com/kanwal_sanatana?igsh=bnQ4aW51dnRwbWw2" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/kanwal_sanatana?igsh=bnQ4aW51dnRwbWw2" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@kanwal_sanatana" class="text-white"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr class="bg-warning">
+        <p class="text-center mb-0 small">© 2026 GEETHA PATASHALA. Sanatana Dharma is Eternal.</p>
+    </div>
+</footer>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/+916302789527" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Scroll to top -->
+<div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script>
+    AOS.init({ 
+        duration: 800, 
+        once: true,
+        disable: 'mobile' // Disable on mobile for better performance
+    });
+    
+    // Navbar scroll effect
+    window.onscroll = function() { 
+        const nav = document.querySelector('.navbar');
+        if (window.pageYOffset > 50) {
+            nav.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+            nav.style.background = "rgba(255, 253, 208, 0.98)";
+        } else {
+            nav.style.boxShadow = "none";
+            nav.style.background = "rgba(255, 253, 208, 0.95)";
+        }
+        
+        // Scroll to top button
+        const scrollTop = document.querySelector('.scroll-top');
+        if (window.pageYOffset > 200) {
+            scrollTop.classList.add('show');
+        } else {
+            scrollTop.classList.remove('show');
+        }
+    };
+    
+    // Set class type function
+    function setClassType(type) { 
+        document.getElementById('classTypeInput').value = type; 
+        const s = document.getElementById('classModeSelect'); 
+        if(s) s.value = type; 
+    }
+    
+    document.getElementById('classModeSelect')?.addEventListener('change', function(e) { 
+        document.getElementById('classTypeInput').value = e.target.value; 
+    });
+
+    // ========== YOUTUBE LINK HANDLER ==========
+    function extractVideoIdFromUrl(url) {
+        if (!url) return null;
+        
+        const patterns = [
+            /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/|youtube\.com\/shorts\/)([^&\n?#]+)/i,
+            /^([a-zA-Z0-9_-]{11})$/
+        ];
+        
+        for (let pattern of patterns) {
+            let match = url.match(pattern);
+            if (match && match[1]) {
+                return match[1].split('?')[0].split('&')[0];
+            }
+        }
+        return null;
+    }
+
+    // ========== VIDEO DATA ==========
+    // Add your YouTube links here - just paste any YouTube URL
+    const videoLinks = {
+        slokas: [
+            {
+                sanskrit: "परित्राणाय साधूनां <br> विनाशाय च दुष्कृताम् ।",
+                transliteration: "paritrāṇāya sādhūnāṃ vināśāya ca duṣkṛtām",
+                meaning: "To protect the righteous and destroy the wicked.",
+                link: "https://youtu.be/ATu0zO422kI"
+            },
+            {
+                sanskrit: "कर्मण्येवाधिकारस्ते <br> मा फलेषु कदाचन ।",
+                transliteration: "karmaṇy-evādhikāras te mā phaleṣu kadācana",
+                meaning: "You have a right to perform duties but not the fruits.",
+                link: "https://youtu.be/XapBRlYpbU0"
+            },
+            {
+                sanskrit: "योगस्थः कुरु कर्माणि <br> सङ्गं त्यक्त्वा धनञ्जय ।",
+                transliteration: "yoga-sthaḥ kuru karmāṇi saṅgaṃ tyaktvā dhanañjaya",
+                meaning: "Perform your duty abandoning attachment.",
+                link: "https://youtu.be/lWRjdr7OYKg"
+            }
+        ],
+        shorts: [
+            {
+                link: "https://youtube.com/shorts/_fEro_SM0F8?si=DJm0VxtTrqJXCLiB"
+            },
+            {
+                link: "https://youtube.com/shorts/vQ_ggndoz84?si=Wf8P7ekp_psZCEjZ"
+            },
+            {
+                link: "https://youtube.com/shorts/GL_o3JLSOSQ?si=zT3b7l3rpI4NYz08"
+            }
+        ]
+    };
+
+    // ========== RENDER VIDEOS ==========
+    function renderVideos() {
+        const slokasContainer = document.getElementById('slokasContainer');
+        const shortsContainer = document.getElementById('shortsContainer');
+        
+        if (!slokasContainer || !shortsContainer) return;
+        
+        slokasContainer.innerHTML = '';
+        shortsContainer.innerHTML = '';
+        
+        // Render Slokas
+        videoLinks.slokas.forEach((item, index) => {
+            const videoId = extractVideoIdFromUrl(item.link);
+            if (!videoId) return;
+            
+            const col = document.createElement('div');
+            col.className = 'col-md-4 d-flex';
+            col.setAttribute('data-aos', 'fade-up');
+            if (index > 0) col.setAttribute('data-aos-delay', index * 100);
+            
+            col.innerHTML = `
+                <div class="sloka-card-modern w-100">
+                    <div class="sanskrit-devanagari text-center">${item.sanskrit}</div>
+                    <div class="sloka-meta"><i class="fas fa-language me-1" style="color:var(--saffron);"></i> ${item.transliteration}</div>
+                    <div class="sloka-meaning"><i class="fas fa-quote-left me-1" style="color:var(--deep-gold);"></i> ${item.meaning}</div>
+                    
+                    <div class="video-player-container" data-video-id="${videoId}">
+                        <div class="video-thumb-wrapper">
+                            <img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" alt="Video thumbnail" class="video-thumb" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${videoId}/hqdefault.jpg'">
+                            <div class="video-play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            slokasContainer.appendChild(col);
+        });
+        
+        // Render Shorts
+        videoLinks.shorts.forEach((item, index) => {
+            const videoId = extractVideoIdFromUrl(item.link);
+            if (!videoId) return;
+            
+            const col = document.createElement('div');
+            col.className = 'col-md-4 col-sm-6';
+            col.setAttribute('data-aos', 'zoom-in');
+            if (index > 0) col.setAttribute('data-aos-delay', index * 100);
+            
+            col.innerHTML = `
+                <div class="shorts-player-container" data-video-id="${videoId}">
+                    <div class="shorts-thumb-wrapper">
+                        <img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" alt="Shorts thumbnail" class="shorts-thumb" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${videoId}/hqdefault.jpg'">
+                        <div class="shorts-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            shortsContainer.appendChild(col);
+        });
+        
+        // Initialize video players after rendering
+        setTimeout(initVideoPlayers, 100);
+    }
+
+    // ========== VIDEO PLAYER FUNCTIONALITY ==========
+    let currentlyPlayingVideo = null;
+
+    function playVideo(container, videoId) {
+        // Stop currently playing video if any
+        if (currentlyPlayingVideo && currentlyPlayingVideo !== container) {
+            stopVideo(currentlyPlayingVideo);
+        }
+        
+        // Create iframe wrapper
+        const wrapper = document.createElement('div');
+        wrapper.className = container.classList.contains('video-player-container') ? 'video-frame-wrapper' : 'shorts-frame-wrapper';
+        
+        // Create iframe
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1&rel=0`;
+        iframe.allow = "autoplay; encrypted-media";
+        iframe.allowFullscreen = true;
+        iframe.loading = "lazy";
+        
+        wrapper.appendChild(iframe);
+        container.innerHTML = '';
+        container.appendChild(wrapper);
+        
+        currentlyPlayingVideo = container;
+    }
+
+    function stopVideo(container) {
+        if (!container) return;
+        
+        const videoId = container.dataset.videoId;
+        if (!videoId) return;
+        
+        // Restore thumbnail
+        const thumbWrapper = document.createElement('div');
+        thumbWrapper.className = container.classList.contains('video-player-container') ? 'video-thumb-wrapper' : 'shorts-thumb-wrapper';
+        
+        const img = document.createElement('img');
+        img.className = container.classList.contains('video-player-container') ? 'video-thumb' : 'shorts-thumb';
+        img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+        img.onerror = function() { 
+            this.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        };
+        img.alt = 'Video thumbnail';
+        img.loading = 'lazy';
+        
+        const playBtn = document.createElement('div');
+        playBtn.className = container.classList.contains('video-player-container') ? 'video-play-btn' : 'shorts-play-btn';
+        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+        
+        thumbWrapper.appendChild(img);
+        thumbWrapper.appendChild(playBtn);
+        
+        container.innerHTML = '';
+        container.appendChild(thumbWrapper);
+        
+        // Reattach click event
+        container.addEventListener('click', function(e) {
+            e.stopPropagation();
+            playVideo(this, videoId);
+        });
+        
+        if (currentlyPlayingVideo === container) {
+            currentlyPlayingVideo = null;
+        }
+    }
+
+    function initVideoPlayers() {
+        // Regular video players
+        document.querySelectorAll('.video-player-container').forEach(container => {
+            const videoId = container.dataset.videoId;
+            if (!videoId) return;
+            
+            // Remove existing listeners
+            const newContainer = container.cloneNode(true);
+            container.parentNode.replaceChild(newContainer, container);
+            
+            newContainer.addEventListener('click', function(e) {
+                e.stopPropagation();
+                playVideo(this, videoId);
+            });
+        });
+        
+        // Shorts players
+        document.querySelectorAll('.shorts-player-container').forEach(container => {
+            const videoId = container.dataset.videoId;
+            if (!videoId) return;
+            
+            const newContainer = container.cloneNode(true);
+            container.parentNode.replaceChild(newContainer, container);
+            
+            newContainer.addEventListener('click', function(e) {
+                e.stopPropagation();
+                playVideo(this, videoId);
+            });
+        });
+    }
+
+    // ========== BOOKING FORM ==========
+    document.getElementById('bookingForm')?.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Booking...';
+        submitBtn.disabled = true;
+
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const phone = formData.get('phone');
+        
+        if (!name || !phone) {
+            showAlert('Please fill all required fields', 'danger');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            return;
+        }
+        
+        if (!/^\d{10}$/.test(phone)) {
+            showAlert('Enter a valid 10-digit mobile number', 'danger');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            return;
+        }
+
+        setTimeout(() => {
+            showAlert('✅ Thank you for your interest! We will contact you soon.', 'success');
+            e.target.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }, 1500);
+    });
+
+    function showAlert(message, type) {
+        const alertDiv = document.getElementById('liveAlert');
+        const alertMsg = document.getElementById('alertMessage');
+        alertMsg.innerText = message;
+        
+        alertDiv.classList.remove('d-none', 'alert-success-custom', 'alert-danger');
+        
+        if (type === 'success') {
+            alertDiv.classList.add('alert-success-custom');
+        } else {
+            alertDiv.classList.add('alert-danger');
+        }
+        
+        alertDiv.classList.remove('d-none');
+        
+        setTimeout(() => alertDiv.classList.add('d-none'), 5000);
+    }
+
+    // Initialize everything when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        renderVideos();
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Close mobile menu if open
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
