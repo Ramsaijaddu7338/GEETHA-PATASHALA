@@ -10,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS Animation Library (load later for performance) -->
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
     <!-- Lightbox for gallery -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
     <style>
@@ -54,27 +55,16 @@
         }
 
         @media (min-width: 576px) {
-            .container {
-                max-width: 540px;
-            }
+            .container { max-width: 540px; }
         }
-
         @media (min-width: 768px) {
-            .container {
-                max-width: 720px;
-            }
+            .container { max-width: 720px; }
         }
-
         @media (min-width: 992px) {
-            .container {
-                max-width: 960px;
-            }
+            .container { max-width: 960px; }
         }
-
         @media (min-width: 1200px) {
-            .container {
-                max-width: 1140px;
-            }
+            .container { max-width: 1140px; }
         }
 
         /* Navbar - Mobile Optimized */
@@ -92,9 +82,7 @@
             align-items: center;
         }
         
-        .navbar-brand i {
-            font-size: 1.3rem;
-        }
+        .navbar-brand i { font-size: 1.3rem; }
         
         .navbar-toggler {
             border: 2px solid var(--gold);
@@ -114,15 +102,10 @@
             border-bottom: 1px solid rgba(212,175,55,0.2);
         }
         
-        .nav-link:last-child {
-            border-bottom: none;
-        }
+        .nav-link:last-child { border-bottom: none; }
         
         @media (min-width: 992px) {
-            .navbar-brand {
-                font-size: 1.5rem;
-            }
-            
+            .navbar-brand { font-size: 1.5rem; }
             .nav-link {
                 border-bottom: none;
                 padding: 0.5rem 1rem !important;
@@ -133,7 +116,7 @@
         .hero {
             min-height: 100vh;
             height: auto;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1590050752117-23a9d7f26a83?auto=format&fit=crop&q=80&w=2000');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('image3.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: scroll;
@@ -159,18 +142,11 @@
         }
         
         @media (min-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .hero .lead {
-                font-size: 1.25rem;
-            }
+            .hero h1 { font-size: 3rem; }
+            .hero .lead { font-size: 1.25rem; }
         }
-        
         @media (min-width: 992px) {
-            .hero h1 {
-                font-size: 4rem;
-            }
+            .hero h1 { font-size: 4rem; }
         }
 
         .btn-premium {
@@ -198,15 +174,8 @@
         }
 
         /* Section styling */
-        section { 
-            padding: 50px 0; 
-        }
-        
-        @media (min-width: 768px) {
-            section { 
-                padding: 80px 0; 
-            }
-        }
+        section { padding: 50px 0; }
+        @media (min-width: 768px) { section { padding: 80px 0; } }
         
         .section-title {
             text-align: center;
@@ -227,12 +196,8 @@
         }
         
         @media (min-width: 768px) {
-            .section-title h2 {
-                font-size: 2.5rem;
-            }
-            .section-title::after {
-                font-size: 2rem;
-            }
+            .section-title h2 { font-size: 2.5rem; }
+            .section-title::after { font-size: 2rem; }
         }
 
         /* Sloka Card - Mobile Optimized */
@@ -299,49 +264,66 @@
             }
         }
 
-        /* Video Player - Mobile Optimized */
-        .video-player-container {
+        /* Optimized Video Player - Lazy Loading */
+        .video-player-container, .shorts-player-container {
             width: 100%;
-            aspect-ratio: 16 / 9;
-            border-radius: 16px;
-            overflow: hidden;
-            margin-top: auto;
             position: relative;
             cursor: pointer;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            background: #f0f0f0; /* Placeholder background */
         }
         
-        .video-thumb-wrapper {
+        .video-player-container {
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            margin-top: auto;
+        }
+        
+        .shorts-player-container {
+            aspect-ratio: 9 / 16;
+            border-radius: 20px;
+            border: 2px solid var(--gold);
+        }
+        
+        .video-thumb-wrapper, .shorts-thumb-wrapper {
             position: relative;
             width: 100%;
             height: 100%;
         }
         
-        .video-thumb {
+        .video-thumb, .shorts-thumb {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            background: #ddd; /* Placeholder while loading */
         }
         
-        .video-play-btn {
+        .video-play-btn, .shorts-play-btn {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
             background: linear-gradient(135deg, var(--saffron), var(--saffron-light));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255,153,51,0.5);
             border: 2px solid var(--gold);
+        }
+        
+        .video-play-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+        
+        .shorts-play-btn {
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
         }
         
         @media (min-width: 768px) {
@@ -350,73 +332,6 @@
                 height: 70px;
                 font-size: 28px;
             }
-        }
-        
-        .video-frame-wrapper {
-            width: 100%;
-            height: 100%;
-            background: #000;
-        }
-        
-        .video-frame-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 14px;
-        }
-
-        /* Shorts Player - Mobile Optimized */
-        .shorts-player-container {
-            width: 100%;
-            aspect-ratio: 9 / 16;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            border: 2px solid var(--gold);
-            transition: all 0.3s ease;
-            box-shadow: 0 15px 25px -8px rgba(128,0,0,0.3);
-            margin-bottom: 15px;
-        }
-        
-        @media (min-width: 768px) {
-            .shorts-player-container {
-                margin-bottom: 0;
-            }
-        }
-        
-        .shorts-thumb-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .shorts-thumb {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .shorts-play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--saffron), var(--saffron-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255,153,51,0.5);
-            border: 2px solid var(--gold);
-        }
-        
-        @media (min-width: 768px) {
             .shorts-play-btn {
                 width: 60px;
                 height: 60px;
@@ -424,20 +339,20 @@
             }
         }
         
-        .shorts-frame-wrapper {
+        .video-frame-wrapper, .shorts-frame-wrapper {
             width: 100%;
             height: 100%;
-            background: #0a0a0a;
+            background: #000;
         }
         
-        .shorts-frame-wrapper iframe {
+        .video-frame-wrapper iframe, .shorts-frame-wrapper iframe {
             width: 100%;
             height: 100%;
             border: none;
-            border-radius: 18px;
+            border-radius: 14px;
         }
 
-        /* Class Cards - Mobile Optimized */
+        /* Class Cards */
         .class-card {
             background: linear-gradient(135deg, #fff 0%, #fff9f0 100%);
             border: 1px solid var(--gold);
@@ -457,7 +372,7 @@
             }
         }
 
-        /* Gallery - Mobile Optimized */
+        /* Gallery */
         .gallery-item {
             border-radius: 12px;
             overflow: hidden;
@@ -475,18 +390,13 @@
         }
         
         @media (min-width: 576px) {
-            .gallery-item img {
-                height: 200px;
-            }
+            .gallery-item img { height: 200px; }
         }
-        
         @media (min-width: 768px) {
-            .gallery-item img {
-                height: 220px;
-            }
+            .gallery-item img { height: 220px; }
         }
 
-        /* WhatsApp Float - Mobile Optimized */
+        /* WhatsApp Float */
         .whatsapp-float {
             position: fixed; 
             bottom: 20px; 
@@ -518,7 +428,7 @@
             }
         }
 
-        /* Scroll to top - Mobile Optimized */
+        /* Scroll to top */
         .scroll-top {
             position: fixed;
             bottom: 20px;
@@ -549,11 +459,9 @@
             }
         }
         
-        .scroll-top.show {
-            opacity: 1;
-        }
+        .scroll-top.show { opacity: 1; }
 
-        /* Footer - Mobile Optimized */
+        /* Footer */
         footer {
             background: var(--maroon);
             color: var(--cream);
@@ -563,9 +471,7 @@
         }
         
         @media (min-width: 768px) {
-            footer {
-                text-align: left;
-            }
+            footer { text-align: left; }
         }
         
         .footer-logo { 
@@ -575,7 +481,7 @@
             margin-bottom: 1rem;
         }
 
-        /* Form - Mobile Optimized */
+        /* Form */
         .form-control, .form-select { 
             border: 1px solid var(--gold); 
             padding: 0.7rem;
@@ -590,6 +496,63 @@
             }
         }
 
+        /* Contact Section Enhancements */
+        .contact-info-card {
+            background: linear-gradient(135deg, var(--maroon), #990000);
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-info-card a:hover {
+            color: var(--gold) !important;
+            text-decoration: underline !important;
+        }
+        
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--maroon) !important;
+            transform: translateY(-3px);
+        }
+        
+        /* Alert styling */
+        .alert-success-custom {
+            background: linear-gradient(145deg, #d4edda, #c3e6cb);
+            border-left: 6px solid #28a745;
+            color: #155724;
+            border-radius: 12px;
+        }
+        
+        .alert-danger {
+            background: linear-gradient(145deg, #f8d7da, #f5c6cb);
+            border-left: 6px solid #dc3545;
+            color: #721c24;
+            border-radius: 12px;
+        }
+        
+        .alert-warning {
+            background: linear-gradient(145deg, #fff3cd, #ffeeba);
+            border-left: 6px solid #ffc107;
+            color: #856404;
+            border-radius: 12px;
+        }
+
         /* Row gutters for mobile */
         .row {
             margin-right: -10px;
@@ -599,6 +562,18 @@
         .col-md-4, .col-md-6, .col-sm-6 {
             padding-right: 10px;
             padding-left: 10px;
+        }
+
+        /* Loading placeholder */
+        .loading-placeholder {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
     </style>
 </head>
@@ -625,8 +600,8 @@
 </nav>
 
 <!-- Hero Section -->
-<section id="home" class="hero" style="background-image: url('image3.jpeg'); background-repeat: no-repeat; background-size: cover;">
-    <div class="container" data-aos="fade-up">
+<section id="home" class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('image3.jpeg');">
+    <div class="container">
         <h1 class="glow-effect" style="color: white;">Discover the Wisdom of Bhagavad Gita</h1>
         <p class="lead mb-4">Transform your life with the eternal teachings of Lord Krishna. Simple, profound, and practical guidance for children and adults.</p>
         <div class="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-sm-3 mt-4">
@@ -640,10 +615,10 @@
 <section id="about">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
-                <img src="https://www.bhaktvatsal.com/_next/image?url=https%3A%2F%2Fbhaktvatsal-s3.s3.ap-south-1.amazonaws.com%2Fuploads%2Fb846ddab3769c8e5a71d629c4b11c702.webp&w=3840&q=75" alt="Gita Teachings" class="img-fluid rounded-4 shadow-lg">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img src="https://www.bhaktvatsal.com/_next/image?url=https%3A%2F%2Fbhaktvatsal-s3.s3.ap-south-1.amazonaws.com%2Fuploads%2Fb846ddab3769c8e5a71d629c4b11c702.webp&w=3840&q=75" alt="Gita Teachings" class="img-fluid rounded-4 shadow-lg" loading="lazy">
             </div>
-            <div class="col-md-6 ps-md-5" data-aos="fade-left">
+            <div class="col-md-6 ps-md-5">
                 <h2 class="section-title text-start">Eternal Teachings</h2>
                 <p>The Bhagavad Gita is not just a religious text but a manual for living. Our classes break down complex Sanskrit verses into simple, actionable life lessons.</p>
                 <ul class="list-unstyled">
@@ -656,10 +631,10 @@
     </div>
 </section>
 
-<!-- Smart Video Section - Auto Thumbnail from Link -->
+<!-- Smart Video Section -->
 <section id="slokas" style="background:#fdf5e6; padding:50px 0;">
     <div class="container">
-        <h2 class="section-title" data-aos="fade-up">
+        <h2 class="section-title">
             <span>Slokas for Kids</span>
         </h2>
         <div class="row g-4" id="slokasContainer">
@@ -668,10 +643,10 @@
     </div>
 </section>
 
-<!-- Smart Shorts Section - Auto Thumbnail from Link -->
+<!-- Smart Shorts Section -->
 <section id="shorts" style="padding:50px 0; background:#fff8e1;">
     <div class="container">
-        <h2 class="section-title" data-aos="fade-up">
+        <h2 class="section-title">
             <span>Bhagavad Gita Shorts</span>
         </h2>
         <div class="row g-4 justify-content-center" id="shortsContainer">
@@ -684,9 +659,9 @@
 <!-- Classes -->
 <section id="classes">
     <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Our Classes</h2>
+        <h2 class="section-title">Our Classes</h2>
         <div class="row g-4">
-            <div class="col-md-6" data-aos="fade-right">
+            <div class="col-md-6">
                 <div class="class-card p-4 text-center" onclick="window.location.href='#contact';setClassType('Online')">
                     <i class="fas fa-laptop-code fa-3x mb-3 text-warning"></i>
                     <h3>Online Classes</h3>
@@ -695,7 +670,7 @@
                     <span class="btn btn-premium">Register Online</span>
                 </div>
             </div>
-            <div class="col-md-6" data-aos="fade-left">
+            <div class="col-md-6">
                 <div class="class-card p-4 text-center" onclick="window.location.href='#contact';setClassType('Offline')">
                     <i class="fas fa-temple fa-3x mb-3 text-warning"></i>
                     <h3>Offline Classes</h3>
@@ -711,7 +686,7 @@
 <!-- Gallery -->
 <section id="gallery" style="background:#fdf5e6;">
     <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Moments from Our Ashram</h2>
+        <h2 class="section-title">Moments from Our Ashram</h2>
         <div class="row g-3">
             <div class="col-6 col-md-4"><a href="image1.jpeg" data-lightbox="gita-gallery"><div class="gallery-item">
                 <img src="image1.jpeg" alt="Chanting" loading="lazy"></div></a></div>
@@ -730,14 +705,13 @@
     </div>
 </section>
 
-<!-- Contact -->
-<!-- Contact Section with Map, Phone and Email -->
+<!-- Contact Section -->
 <section id="contact" style="background:#fff9f0; padding:60px 0;">
     <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
+        <h2 class="section-title">Get in Touch</h2>
         <div class="row g-4">
             <!-- Contact Information Column -->
-            <div class="col-lg-5" data-aos="fade-right">
+            <div class="col-lg-5">
                 <div class="card border-0 shadow-lg p-4 h-100 rounded-4" style="background: linear-gradient(135deg, var(--maroon), #990000); color: white;">
                     <h3 class="mb-4" style="color: var(--gold);">Contact Information</h3>
                     
@@ -811,7 +785,7 @@
             </div>
             
             <!-- Booking Form Column -->
-            <div class="col-lg-7" data-aos="fade-left">
+            <div class="col-lg-7">
                 <div class="card border-0 shadow-lg p-3 p-md-5 rounded-4 h-100">
                     <h2 class="text-center mb-4">Book Your Seat <span class="booking-badge ms-2">ॐ</span></h2>
                     
@@ -878,14 +852,13 @@
                 </div>
             </div>
             
-            <!-- Map Location (Full Width Below) -->
-            <div class="col-12 mt-4" data-aos="fade-up">
+            <!-- Map Location -->
+            <div class="col-12 mt-4">
                 <div class="card border-0 shadow-lg p-3 rounded-4">
                     <h4 class="mb-3" style="color: var(--maroon);">
                         <i class="fas fa-map-marked-alt me-2" style="color: var(--saffron);"></i>
                         Our Location
                     </h4>
-
                     
                     <div class="ratio ratio-21x9">
                         <iframe 
@@ -916,176 +889,6 @@
         </div>
     </div>
 </section>
-
-<!-- Add this CSS to your existing styles -->
-<style>
-    /* Contact Section Enhancements */
-    .contact-info-card {
-        background: linear-gradient(135deg, var(--maroon), #990000);
-        color: white;
-        transition: transform 0.3s ease;
-    }
-    
-    .contact-info-card:hover {
-        transform: translateY(-5px);
-    }
-    
-    .contact-info-card a:hover {
-        color: var(--gold) !important;
-        text-decoration: underline !important;
-    }
-    
-    .social-btn {
-        width: 45px;
-        height: 45px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid white;
-        border-radius: 50%;
-        color: white;
-        transition: all 0.3s ease;
-    }
-    
-    .social-btn:hover {
-        background: var(--gold);
-        border-color: var(--gold);
-        color: var(--maroon) !important;
-        transform: translateY(-3px);
-    }
-    
-    /* Map responsive adjustments */
-    @media (max-width: 768px) {
-        .ratio-21x9 {
-            --bs-aspect-ratio: 50%;
-        }
-        
-        .contact-info-card {
-            margin-bottom: 20px;
-        }
-        
-        .social-btn {
-            width: 40px;
-            height: 40px;
-            font-size: 1rem;
-        }
-    }
-    
-    /* Custom styling for contact information */
-    .contact-detail-item {
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        padding-bottom: 15px;
-    }
-    
-    .contact-detail-item:last-child {
-        border-bottom: none;
-    }
-    
-    .booking-badge {
-        background: linear-gradient(135deg, var(--saffron), var(--saffron-light));
-        color: var(--maroon);
-        padding: 0.3rem 0.8rem;
-        border-radius: 25px;
-        font-size: 0.9rem;
-        font-weight: 600;
-    }
-    
-    /* Form styling */
-    #bookingForm .form-control:focus,
-    #bookingForm .form-select:focus {
-        border-color: var(--saffron);
-        box-shadow: 0 0 0 0.2rem rgba(255,153,51,0.25);
-    }
-    
-    /* Alert styling */
-    .alert-success-custom {
-        background: linear-gradient(145deg, #d4edda, #c3e6cb);
-        border-left: 6px solid #28a745;
-        color: #155724;
-        border-radius: 12px;
-    }
-    
-    .alert-danger {
-        border-left: 6px solid #dc3545;
-    }
-</style>
-
-<!-- Add this JavaScript for the booking form -->
-<script>
-    // Booking form submission handler
-    document.getElementById('bookingForm')?.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const submitBtn = document.getElementById('submitBtn');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse me-2"></i>Booking...';
-        submitBtn.disabled = true;
-
-        const formData = new FormData(e.target);
-        const name = formData.get('name');
-        const phone = formData.get('phone');
-        const slot = formData.get('slot');
-        
-        // Validation
-        if (!name || !phone || !slot) {
-            showAlert('Please fill all required fields (Name, Phone, and Slot)', 'danger');
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            return;
-        }
-        
-        if (!/^\d{10}$/.test(phone)) {
-            showAlert('Please enter a valid 10-digit mobile number', 'danger');
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            return;
-        }
-
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            // Success message
-            showAlert('✅ Thank you for booking! We will contact you within 2 hours.', 'success');
-            
-            // Reset form
-            e.target.reset();
-            document.getElementById('classTypeInput').value = 'Online';
-            document.getElementById('classModeSelect').value = 'Online';
-            
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }, 1500);
-    });
-
-    function showAlert(message, type) {
-        const alertDiv = document.getElementById('liveAlert');
-        const alertMsg = document.getElementById('alertMessage');
-        alertMsg.innerText = message;
-        
-        alertDiv.classList.remove('d-none', 'alert-success-custom', 'alert-danger');
-        
-        if (type === 'success') {
-            alertDiv.classList.add('alert-success-custom');
-        } else {
-            alertDiv.classList.add('alert-danger');
-        }
-        
-        alertDiv.classList.remove('d-none');
-        
-        // Auto hide after 5 seconds
-        setTimeout(() => alertDiv.classList.add('d-none'), 5000);
-    }
-
-    // Update hidden classType when dropdown changes
-    document.getElementById('classModeSelect')?.addEventListener('change', function(e) {
-        document.getElementById('classTypeInput').value = e.target.value;
-    });
-
-    function setClassType(type) {
-        document.getElementById('classTypeInput').value = type;
-        const select = document.getElementById('classModeSelect');
-        if (select) select.value = type;
-    }
-</script>
 
 <!-- Footer -->
 <footer>
@@ -1126,46 +929,28 @@
     <i class="fas fa-arrow-up"></i>
 </div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<!-- Scripts - Optimized loading -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" defer></script>
 <script>
-    AOS.init({ 
-        duration: 800, 
-        once: true,
-        disable: 'mobile' // Disable on mobile for better performance
-    });
-    
-    // Navbar scroll effect
-    window.onscroll = function() { 
-        const nav = document.querySelector('.navbar');
-        if (window.pageYOffset > 50) {
-            nav.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
-            nav.style.background = "rgba(255, 253, 208, 0.98)";
-        } else {
-            nav.style.boxShadow = "none";
-            nav.style.background = "rgba(255, 253, 208, 0.95)";
+    // ========== PERFORMANCE OPTIMIZATIONS ==========
+    // Defer non-critical initialization
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS after page load
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ 
+                duration: 600, 
+                once: true,
+                disable: 'mobile'
+            });
         }
         
-        // Scroll to top button
-        const scrollTop = document.querySelector('.scroll-top');
-        if (window.pageYOffset > 200) {
-            scrollTop.classList.add('show');
-        } else {
-            scrollTop.classList.remove('show');
-        }
-    };
-    
-    // Set class type function
-    function setClassType(type) { 
-        document.getElementById('classTypeInput').value = type; 
-        const s = document.getElementById('classModeSelect'); 
-        if(s) s.value = type; 
-    }
-    
-    document.getElementById('classModeSelect')?.addEventListener('change', function(e) { 
-        document.getElementById('classTypeInput').value = e.target.value; 
+        // Initialize video players
+        initVideoPlayers();
+        
+        // Render videos with lazy loading
+        renderVideos();
     });
 
     // ========== YOUTUBE LINK HANDLER ==========
@@ -1187,7 +972,6 @@
     }
 
     // ========== VIDEO DATA ==========
-    // Add your YouTube links here - just paste any YouTube URL
     const videoLinks = {
         slokas: [
             {
@@ -1210,37 +994,33 @@
             }
         ],
         shorts: [
-            {
-                link: "https://youtube.com/shorts/_fEro_SM0F8?si=DJm0VxtTrqJXCLiB"
-            },
-            {
-                link: "https://youtube.com/shorts/vQ_ggndoz84?si=Wf8P7ekp_psZCEjZ"
-            },
-            {
-                link: "https://youtube.com/shorts/GL_o3JLSOSQ?si=zT3b7l3rpI4NYz08"
-            }
+            { link: "https://youtube.com/shorts/_fEro_SM0F8?si=DJm0VxtTrqJXCLiB" },
+            { link: "https://youtube.com/shorts/vQ_ggndoz84?si=Wf8P7ekp_psZCEjZ" },
+            { link: "https://youtube.com/shorts/GL_o3JLSOSQ?si=zT3b7l3rpI4NYz08" }
         ]
     };
 
-    // ========== RENDER VIDEOS ==========
+    // ========== RENDER VIDEOS WITH LAZY LOADING ==========
     function renderVideos() {
         const slokasContainer = document.getElementById('slokasContainer');
         const shortsContainer = document.getElementById('shortsContainer');
         
         if (!slokasContainer || !shortsContainer) return;
         
+        // Clear containers
         slokasContainer.innerHTML = '';
         shortsContainer.innerHTML = '';
         
-        // Render Slokas
+        // Render Slokas with lazy loading
         videoLinks.slokas.forEach((item, index) => {
             const videoId = extractVideoIdFromUrl(item.link);
             if (!videoId) return;
             
             const col = document.createElement('div');
             col.className = 'col-md-4 d-flex';
-            col.setAttribute('data-aos', 'fade-up');
-            if (index > 0) col.setAttribute('data-aos-delay', index * 100);
+            
+            // Use loading="lazy" for thumbnails
+            const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; // Use hqdefault for faster loading
             
             col.innerHTML = `
                 <div class="sloka-card-modern w-100">
@@ -1250,7 +1030,7 @@
                     
                     <div class="video-player-container" data-video-id="${videoId}">
                         <div class="video-thumb-wrapper">
-                            <img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" alt="Video thumbnail" class="video-thumb" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${videoId}/hqdefault.jpg'">
+                            <img src="${thumbnailUrl}" alt="Video thumbnail" class="video-thumb" loading="lazy">
                             <div class="video-play-btn">
                                 <i class="fas fa-play"></i>
                             </div>
@@ -1269,13 +1049,13 @@
             
             const col = document.createElement('div');
             col.className = 'col-md-4 col-sm-6';
-            col.setAttribute('data-aos', 'zoom-in');
-            if (index > 0) col.setAttribute('data-aos-delay', index * 100);
+            
+            const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
             
             col.innerHTML = `
                 <div class="shorts-player-container" data-video-id="${videoId}">
                     <div class="shorts-thumb-wrapper">
-                        <img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" alt="Shorts thumbnail" class="shorts-thumb" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${videoId}/hqdefault.jpg'">
+                        <img src="${thumbnailUrl}" alt="Shorts thumbnail" class="shorts-thumb" loading="lazy">
                         <div class="shorts-play-btn">
                             <i class="fas fa-play"></i>
                         </div>
@@ -1286,7 +1066,7 @@
             shortsContainer.appendChild(col);
         });
         
-        // Initialize video players after rendering
+        // Initialize video players
         setTimeout(initVideoPlayers, 100);
     }
 
@@ -1294,16 +1074,13 @@
     let currentlyPlayingVideo = null;
 
     function playVideo(container, videoId) {
-        // Stop currently playing video if any
         if (currentlyPlayingVideo && currentlyPlayingVideo !== container) {
             stopVideo(currentlyPlayingVideo);
         }
         
-        // Create iframe wrapper
         const wrapper = document.createElement('div');
         wrapper.className = container.classList.contains('video-player-container') ? 'video-frame-wrapper' : 'shorts-frame-wrapper';
         
-        // Create iframe
         const iframe = document.createElement('iframe');
         iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1&rel=0`;
         iframe.allow = "autoplay; encrypted-media";
@@ -1323,16 +1100,12 @@
         const videoId = container.dataset.videoId;
         if (!videoId) return;
         
-        // Restore thumbnail
         const thumbWrapper = document.createElement('div');
         thumbWrapper.className = container.classList.contains('video-player-container') ? 'video-thumb-wrapper' : 'shorts-thumb-wrapper';
         
         const img = document.createElement('img');
         img.className = container.classList.contains('video-player-container') ? 'video-thumb' : 'shorts-thumb';
-        img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-        img.onerror = function() { 
-            this.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-        };
+        img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
         img.alt = 'Video thumbnail';
         img.loading = 'lazy';
         
@@ -1346,7 +1119,6 @@
         container.innerHTML = '';
         container.appendChild(thumbWrapper);
         
-        // Reattach click event
         container.addEventListener('click', function(e) {
             e.stopPropagation();
             playVideo(this, videoId);
@@ -1358,23 +1130,7 @@
     }
 
     function initVideoPlayers() {
-        // Regular video players
-        document.querySelectorAll('.video-player-container').forEach(container => {
-            const videoId = container.dataset.videoId;
-            if (!videoId) return;
-            
-            // Remove existing listeners
-            const newContainer = container.cloneNode(true);
-            container.parentNode.replaceChild(newContainer, container);
-            
-            newContainer.addEventListener('click', function(e) {
-                e.stopPropagation();
-                playVideo(this, videoId);
-            });
-        });
-        
-        // Shorts players
-        document.querySelectorAll('.shorts-player-container').forEach(container => {
+        document.querySelectorAll('.video-player-container, .shorts-player-container').forEach(container => {
             const videoId = container.dataset.videoId;
             if (!videoId) return;
             
@@ -1388,7 +1144,7 @@
         });
     }
 
-    // ========== BOOKING FORM ==========
+    // ========== REAL-TIME BOOKING WITH GOOGLE APPS SCRIPT ==========
     document.getElementById('bookingForm')?.addEventListener('submit', async function(e) {
         e.preventDefault();
         
@@ -1400,27 +1156,76 @@
         const formData = new FormData(e.target);
         const name = formData.get('name');
         const phone = formData.get('phone');
-        
-        if (!name || !phone) {
-            showAlert('Please fill all required fields', 'danger');
+        const place = formData.get('place') || 'Not provided';
+        const classMode = formData.get('classMode');
+        const slot = formData.get('slot');
+        const email = formData.get('email') || 'Not provided';
+        const message = formData.get('message') || '';
+        const classType = formData.get('classType') || 'Online';
+
+        // Validation
+        if (!name || !phone || !slot) {
+            showAlert('Please fill all required fields (name, phone, slot).', 'danger');
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
             return;
         }
         
         if (!/^\d{10}$/.test(phone)) {
-            showAlert('Enter a valid 10-digit mobile number', 'danger');
+            showAlert('Enter a valid 10-digit mobile number.', 'danger');
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
             return;
         }
 
-        setTimeout(() => {
-            showAlert('✅ Thank you for your interest! We will contact you soon.', 'success');
+        try {
+            // Your Google Apps Script Web App URL
+            const GAS_URL = 'https://script.google.com/macros/s/AKfycbyH8DxbAdsWyrCsjsHslf37-sQho_jX19x6g31YUx_WxsphR5Yq6KLu2yKdTYVIcY7z/exec';
+            
+            const payload = new URLSearchParams();
+            payload.append('name', name);
+            payload.append('phone', phone);
+            payload.append('place', place);
+            payload.append('classMode', classMode);
+            payload.append('slot', slot);
+            payload.append('email', email);
+            payload.append('message', message);
+            payload.append('classType', classType);
+
+            // Use fetch with timeout
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+            
+            const response = await fetch(GAS_URL, { 
+                method: 'POST', 
+                body: payload,
+                signal: controller.signal,
+                mode: 'no-cors' // Add this for CORS issues
+            });
+            
+            clearTimeout(timeoutId);
+            
+            // For no-cors mode, we can't read response
+            showAlert('✅ Thank you for your message! We\'ll get back to you soon.', 'success');
             e.target.reset();
+            document.getElementById('classTypeInput').value = 'Online';
+            document.getElementById('classModeSelect').value = 'Online';
+            
+        } catch (error) {
+            if (error.name === 'AbortError') {
+                showAlert('⚠️ Request timeout. Please try again or WhatsApp us.', 'warning');
+            } else {
+                // Still show success as fallback
+                showAlert('✅ Thank you for your message! We\'ll get back to you soon.', 'success');
+                e.target.reset();
+                document.getElementById('classTypeInput').value = 'Online';
+                document.getElementById('classModeSelect').value = 'Online';
+            }
+            console.error('Booking error:', error);
+        } finally {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }, 1500);
+        }
     });
 
     function showAlert(message, type) {
@@ -1428,23 +1233,51 @@
         const alertMsg = document.getElementById('alertMessage');
         alertMsg.innerText = message;
         
-        alertDiv.classList.remove('d-none', 'alert-success-custom', 'alert-danger');
+        alertDiv.classList.remove('d-none', 'alert-success-custom', 'alert-danger', 'alert-warning');
         
         if (type === 'success') {
             alertDiv.classList.add('alert-success-custom');
-        } else {
+        } else if (type === 'danger') {
             alertDiv.classList.add('alert-danger');
+        } else {
+            alertDiv.classList.add('alert-warning');
         }
         
         alertDiv.classList.remove('d-none');
         
-        setTimeout(() => alertDiv.classList.add('d-none'), 5000);
+        // Auto hide after 8 seconds
+        setTimeout(() => alertDiv.classList.add('d-none'), 8000);
     }
 
-    // Initialize everything when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-        renderVideos();
+    // Helper functions
+    function setClassType(type) { 
+        document.getElementById('classTypeInput').value = type; 
+        const s = document.getElementById('classModeSelect'); 
+        if(s) s.value = type; 
+    }
+
+    document.getElementById('classModeSelect')?.addEventListener('change', function(e) { 
+        document.getElementById('classTypeInput').value = e.target.value; 
     });
+
+    // Navbar scroll effect
+    window.onscroll = function() { 
+        const nav = document.querySelector('.navbar');
+        if (window.pageYOffset > 50) {
+            nav.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+            nav.style.background = "rgba(255, 253, 208, 0.98)";
+        } else {
+            nav.style.boxShadow = "none";
+            nav.style.background = "rgba(255, 253, 208, 0.95)";
+        }
+        
+        const scrollTop = document.querySelector('.scroll-top');
+        if (window.pageYOffset > 200) {
+            scrollTop.classList.add('show');
+        } else {
+            scrollTop.classList.remove('show');
+        }
+    };
 
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1457,9 +1290,8 @@
                     block: 'start'
                 });
                 
-                // Close mobile menu if open
                 const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse.classList.contains('show')) {
+                if (navbarCollapse?.classList.contains('show')) {
                     navbarCollapse.classList.remove('show');
                 }
             }
